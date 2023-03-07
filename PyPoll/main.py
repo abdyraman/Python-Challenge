@@ -27,8 +27,8 @@ with open(read_filepath, "r") as f:
 print(len(ballotid))
 
 #A complete list of candidates who received votes
-for name in (len.candidate):
-    print(name)
+non_repeating_names = list(set(candidate))
+print(non_repeating_names)
 
 #The percentage of votes each candidate won
 
