@@ -1,5 +1,6 @@
 import csv
 
+
 #Defining the pathes to read and write in csv files
 read_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyPoll/Resources/election_data.csv"
 write_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyPoll/Resources/processed_election_data.csv"
@@ -33,7 +34,37 @@ print(non_repeating_names)
 #The percentage of votes each candidate won
 
 
-#The total number of votes each candidate won
+# #The total number of votes each candidate won
+
+count_rad = candidate.count('Raymon Anthony Doane')
+print(count_rad)  
+
+count_ccs = candidate.count('Charles Casper Stockham')
+print(count_ccs)  
+
+count_dd = candidate.count('Diana DeGette')
+print(count_dd)  
+
+Total= count_rad+count_dd+count_ccs
+print(Total)
+
+
+
+# # Zip lists together
+# cleaned_csv = zip(candidate, ballotid)
+
+# # Set variable for output file
+# output_file = os.path.join("processed_election_data.csv")
+
+# #  Open the output file
+# with open(output_file, "w") as datafile:
+#     writer = csv.writer(datafile)
+
+#     # Write the header row
+#     writer.writerow(["Candidate name", "Population", "Votes ID"])
+
+#     # Write in zipped rows
+#     writer.writerows(processed_election_data.csv)
 
 
 #The winner of the election based on popular vote
