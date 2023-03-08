@@ -9,6 +9,7 @@ write_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyP
 ballotid=[]
 county=[]
 candidate=[]
+vote_count=0
 
 #opening the file to read the lists
 with open(read_filepath, "r") as f:
@@ -51,11 +52,28 @@ print(Total)
 first_candidate=(count_rad/Total)*100
 second_candidate=(count_ccs/Total)*100
 third_candidate=(count_dd/Total)*100
-print(first_candidate)
-print(second_candidate)
-print(third_candidate)
-
-    
-  
+print("%d%%" %first_candidate)
+print("%d%%" %second_candidate)
+print("%d%%" %third_candidate)
 
 #The winner of the election based on popular vote
+def popular_vote(candidates):
+    # A dictionary to store the vote count for each candidate
+    vote_count = {}
+    for candidate in candidates:
+        if candidate in vote_count:
+            vote_count[candidate] += 1
+        else:
+            vote_count[candidate] = 1
+    
+    # Find the candidate with the most votes
+    max_votes = 0
+    winner = None
+    for candidate, votes in vote_count.items():
+        if votes > max_votes:
+            max_votes = votes
+            winner = candidate
+    
+    return winner
+
+popular_vote(candidate)
