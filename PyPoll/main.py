@@ -31,8 +31,6 @@ print(len(ballotid))
 non_repeating_names = list(set(candidate))
 print(non_repeating_names)
 
-#The percentage of votes each candidate won
-
 
 # #The total number of votes each candidate won
 
@@ -48,23 +46,16 @@ print(count_dd)
 Total= count_rad+count_dd+count_ccs
 print(Total)
 
+#The percentage of votes each candidate won
 
+first_candidate=(count_rad/Total)*100
+second_candidate=(count_ccs/Total)*100
+third_candidate=(count_dd/Total)*100
+print(first_candidate)
+print(second_candidate)
+print(third_candidate)
 
-# # Zip lists together
-# cleaned_csv = zip(candidate, ballotid)
-
-# # Set variable for output file
-# output_file = os.path.join("processed_election_data.csv")
-
-# #  Open the output file
-# with open(output_file, "w") as datafile:
-#     writer = csv.writer(datafile)
-
-#     # Write the header row
-#     writer.writerow(["Candidate name", "Population", "Votes ID"])
-
-#     # Write in zipped rows
-#     writer.writerows(processed_election_data.csv)
-
+    
+  
 
 #The winner of the election based on popular vote
