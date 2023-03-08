@@ -27,7 +27,7 @@ with open(read_filepath, "r") as f:
 #The total number of votes cast
 print("Election Results")
 print("-------------------------")
-print("Total Votes" end=) 
+print("Total Votes: ", end= "") 
 print(len(ballotid))
 print("-------------------------")
 
@@ -39,11 +39,11 @@ non_repeating_names = list(set(candidate))
 # #The total number of votes each candidate won
 
 count_rad = candidate.count('Raymon Anthony Doane')
-#print(count_rad)  
+
 count_ccs = candidate.count('Charles Casper Stockham')
-#print(count_ccs)  
+ 
 count_dd = candidate.count('Diana DeGette')
-#print(count_dd)  
+
 Total= count_rad+count_dd+count_ccs
 #print(Total)
 
@@ -52,10 +52,12 @@ Total= count_rad+count_dd+count_ccs
 first_candidate=(count_rad/Total)*100
 second_candidate=(count_ccs/Total)*100
 third_candidate=(count_dd/Total)*100
-print("Raymon Anthony Doane: "+"%d%%" %first_candidate)
-print("Charles Casper Stockham: "+"%d%%" %second_candidate)
-print("Diana DeGette: "+ "%d%%" %third_candidate)
-
+print("Raymon Anthony Doane: "+"%d%%" %first_candidate + "  ", end= "") 
+print((count_rad))
+print("Charles Casper Stockham: "+"%d%%" %second_candidate + "  ", end= "") 
+print(count_ccs) 
+print("Diana DeGette: "+ "%d%%" %third_candidate + "  ", end= "") 
+print(count_dd)  
 #The winner of the election based on popular vote
 def popular_vote(candidates):
     # A dictionary to store the vote count for each candidate
