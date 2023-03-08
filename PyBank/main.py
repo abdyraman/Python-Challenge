@@ -37,12 +37,23 @@ for i in range (len(proflosses)-1):
 
 #Greatest increase in profits
 print(max(pl_change))
-#How to find out the month related to the max?
+
+max_value = (max(pl_change))
+#+1 because the value is starting from the second row (2-1)
+max_index = pl_change.index(max_value)+1
+matching_value = date[max_index]
+print(matching_value)
+
 
 
 #Greatest decrease in profits
 print(min(pl_change))
-#How to find out the month related to the min?
+
+min_value=(min(pl_change))
+#+1 because the value is starting from the second row (2-1)
+min_index = pl_change.index(min_value)+1
+matching_value = date[min_index]
+print(matching_value)
 
 #Average Change
 for i in range (len(pl_change)):
