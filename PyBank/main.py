@@ -37,9 +37,12 @@ for i in range (len(proflosses)-1):
 
 #Greatest increase in profits
 print(max(pl_change))
+#How to find out the month related to the max?
+
 
 #Greatest decrease in profits
 print(min(pl_change))
+#How to find out the month related to the min?
 
 #Average Change
 for i in range (len(pl_change)):
