@@ -14,7 +14,7 @@ with open(read_filepath, "r") as f:
 
  # Read the header row first (skip this part if there is no header)
     csv_header = next(f)
-    print(f"Header: {csv_header}")
+    #print(f"Header: {csv_header}")
 
     for row in reader:
         #print(row[0], row[1]) just to check if filepath is correct
@@ -28,21 +28,32 @@ print (len(date))
 print (sum(proflosses))
 
 #Average Change
-# def average(numbers):
-#     length = len(numbers)
-#     total = 0.0
-#     for number in numbers:
-#         total += number
-#     return total / length
+for i in range (len(proflosses)-1):
+    difference= [proflosses[i+1]-(proflosses[i])]
+    print(difference)
+
+ave= sum(difference)/len(difference)
+print(ave)
+
+#Average difference
+
+def average_change(data):
+    diff=[data[i+1]-data[i] for i in range(len(data)-1)]
+    ave_chan=sum(diff)/len(diff)
+    return ave_chan
+
+average_change(proflosses)
+print("ave_chan")
+
 
 # print(average(proflosses))
 
 
 
 #Greatest increase in profits
-max_value = max(proflosses)
-print(max_value)
+# max_value = max(proflosses)
+# print(max_value)
 
 #Greatest decrease in profits
-min_value = min(proflosses)
-print(min_value)
+#min_value = min(proflosses)
+#print(min_value)
