@@ -1,6 +1,5 @@
 import csv
 
-
 #Defining the pathes to read and write in csv files
 read_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyPoll/Resources/election_data.csv"
 
@@ -34,32 +33,29 @@ print("-------------------------")
 #A complete list of candidates who received votes
 non_repeating_names = list(set(candidate))
 
-
-
-# #The total number of votes each candidate won
-
+#The total number of votes each candidate won
 count_rad = candidate.count('Raymon Anthony Doane')
-
 count_ccs = candidate.count('Charles Casper Stockham')
- 
 count_dd = candidate.count('Diana DeGette')
 
 Total= count_rad+count_dd+count_ccs
-#print(Total)
+
 
 #The percentage of votes each candidate won
-
 first_candidate=(count_rad/Total)*100
 second_candidate=(count_ccs/Total)*100
 third_candidate=(count_dd/Total)*100
+
 print("Raymon Anthony Doane: "+"%d%%" %first_candidate + "  ", end= "") 
-print((count_rad))
+print(count_rad)
 print("Charles Casper Stockham: "+"%d%%" %second_candidate + "  ", end= "") 
 print(count_ccs) 
 print("Diana DeGette: "+ "%d%%" %third_candidate + "  ", end= "") 
 print(count_dd)  
+
 #The winner of the election based on popular vote
 def popular_vote(candidates):
+
     # A dictionary to store the vote count for each candidate
     vote_count = {}
     for candidate in candidates:
@@ -79,4 +75,5 @@ def popular_vote(candidates):
 print("-------------------------")
 print("Winner:"+ popular_vote(candidate))
 print("-------------------------")
+
 
