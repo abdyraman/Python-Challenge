@@ -70,3 +70,4 @@ average_change= average_change/len(pl_change)
 print ("Average Change: ", end="")
 print(average_change)
 
+file = open("PyBank/Analysis/results.txt", "w")

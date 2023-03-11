@@ -23,12 +23,22 @@ with open(read_filepath, "r") as f:
         county.append (row[1])
         candidate.append(row[2])
 
+#Creating txt file
+file = open("PyPoll/Analysis/results.txt", "w")
+
 #The total number of votes cast
 print("Election Results")
 print("-------------------------")
 print("Total Votes: ", end= "") 
 print(len(ballotid))
 print("-------------------------")
+
+#Adding value to txt
+file.write("Election Results"+ "\n")
+file.write("-------------------------"+ "\n")
+file.write("Total Votes:"+ "\n") 
+file.write(str(len(ballotid))+ "\n") #why str works, and int doesnt?
+file.write("-------------------------"+ "\n")
 
 #A complete list of candidates who received votes
 non_repeating_names = list(set(candidate))
@@ -53,6 +63,17 @@ print(count_ccs)
 print("Diana DeGette: "+ "%d%%" %third_candidate + "  ", end= "") 
 print(count_dd)  
 
+#Adding text to the txt file
+file.write("Raymon Anthony Doane:{}%\n".format(first_candidate))
+file.write (str(count_rad))
+file.write("\n")
+file.write("Charles Casper Stockham:{}%\n".format(second_candidate)) 
+file.write(str(count_ccs)) 
+file.write("\n")
+file.write("Diana DeGette:{}%\n".format(third_candidate)) 
+file.write(str(count_dd))  
+file.write("\n")
+
 #The winner of the election based on popular vote
 def popular_vote(candidates):
 
@@ -76,4 +97,11 @@ print("-------------------------")
 print("Winner:"+ popular_vote(candidate))
 print("-------------------------")
 
+#Adding to txt
 
+file.write("-------------------------"+ "\n")
+file.write("Winner:"+ popular_vote(candidate) + "\n")
+file.write("-------------------------" + "\n")
+
+
+file.close()
