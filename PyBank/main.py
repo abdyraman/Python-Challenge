@@ -1,10 +1,9 @@
 import csv
 
-#Defining the pathes to read and write in csv files
+#Defining the pathes to read csv file
 read_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyBank/Resources/budget_data.csv"
-write_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyBank/Resources/processed_budget_data.csv"
 
-#creating the lists based on the data
+#creating the lists and values based on the data
 date=[]
 proflosses=[]
 net_total=0
@@ -35,6 +34,17 @@ print (len(date))
 print ("Total: ", end="")
 print (sum(proflosses))
 
+#Creation of txt document
+file = open("PyBank/Analysis/results.txt", "w")
+
+#Adding values to txt
+file.write("Financial Analysis"+ "\n")
+file.write("----------------------------"+ "\n")
+file.write("Total Months: ")
+file.write(str(len(date))+ "\n")
+file.write("Total: ")
+file.write(str(sum(proflosses))+ "\n")
+
 #Looping through the profits and losses to make a list of changes (i+1)-(i)
 for i in range (len(proflosses)-1):
     pl_change.append(proflosses[i+1]-proflosses[i])
@@ -43,14 +53,16 @@ for i in range (len(proflosses)-1):
 print ("Greatest decrease in profits: ", end="")
 print(max(pl_change))
 
-
 max_value = (max(pl_change))
 #+1 because the value is starting from the second row (2-1)
 max_index = pl_change.index(max_value)+1
 matching_value = date[max_index]
 print(matching_value)
 
-
+#Adding value to txt
+file.write("Greatest increase in profits: ")
+file.write(str(max(pl_change))+"\n")
+file.write(str(matching_value)+"\n")
 
 #Greatest decrease in profits
 print ("Greatest decrease in profits: ", end="")
@@ -62,6 +74,11 @@ min_index = pl_change.index(min_value)+1
 matching_value = date[min_index]
 print(matching_value)
 
+#Adding value to txt
+file.write("Greatest decrease in profits: ")
+file.write(str(min(pl_change))+"\n")
+file.write(str(matching_value)+"\n")
+
 #Average Change
 for i in range (len(pl_change)):
     average_change += pl_change[i]
@@ -70,4 +87,9 @@ average_change= average_change/len(pl_change)
 print ("Average Change: ", end="")
 print(average_change)
 
-file = open("PyBank/Analysis/results.txt", "w")
+#Adding value to txt
+file.write("Average Change: ")
+file.write(str(average_change))
+
+#Closing txt
+file.close()
