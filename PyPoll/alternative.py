@@ -7,8 +7,8 @@ read_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyPo
 #creating the lists based on the data
 ballotid=[]
 county=[]
-candidate=[]
-
+candidate={}
+#candidate=[]
 
 #opening the file to read the lists
 with open(read_filepath, "r") as f:
@@ -22,7 +22,18 @@ with open(read_filepath, "r") as f:
           # print(row[0], row[1], row[2]) 
         ballotid.append(int(row[0]))
         county.append (row[1])
-        candidate.append(row[2])
+        try:
+            candidate[row[2]]+=1
+            # candidate[row[2]][row[1]]+=1
+            # candidate[row[2]]["Total"]+=1
+        except:
+            candidate[row[2]]=1
+            # candidate[row[2]]={}
+            # candidate[row[2]][row[1]]=1
+            # candidate[row[2]]["Total"]=1
+        
+        # if row[2] not in candidate:
+        #     candidate.append(row[2])
 print(candidate)
 
 my_dict = {}
@@ -32,7 +43,7 @@ non_repeating_names = list(set(candidate))
 print(non_repeating_names)
 
 # append the list to the dictionary
-#my_dict["three_candidates"] = candidate
+my_dict['Raymon Anthony Doane', 'Charles Casper Stockham', 'Diana DeGette'] = candidate
 
 # print the dictionary
 #print(my_dict)

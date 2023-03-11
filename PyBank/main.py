@@ -43,6 +43,7 @@ for i in range (len(proflosses)-1):
 print ("Greatest decrease in profits: ", end="")
 print(max(pl_change))
 
+
 max_value = (max(pl_change))
 #+1 because the value is starting from the second row (2-1)
 max_index = pl_change.index(max_value)+1
