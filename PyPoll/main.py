@@ -1,9 +1,9 @@
 import csv
 
-#Defining the pathes to read and write in csv files
+#Defining the path to read csv file
 read_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyPoll/Resources/election_data.csv"
 
-#creating the lists based on the data
+#creating the lists and values based on the data
 ballotid=[]
 county=[]
 candidate=[]
@@ -49,7 +49,6 @@ count_ccs = candidate.count('Charles Casper Stockham')
 count_dd = candidate.count('Diana DeGette')
 
 Total= count_rad+count_dd+count_ccs
-
 
 #The percentage of votes each candidate won
 first_candidate=(count_rad/Total)*100
@@ -98,7 +97,6 @@ print("Winner:"+ popular_vote(candidate))
 print("-------------------------")
 
 #Adding to txt
-
 file.write("-------------------------"+ "\n")
 file.write("Winner:"+ popular_vote(candidate) + "\n")
 file.write("-------------------------" + "\n")

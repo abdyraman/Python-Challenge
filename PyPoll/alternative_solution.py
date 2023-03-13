@@ -1,7 +1,7 @@
 import csv
 
 
-#Defining the pathes to read and write in csv files
+#Defining the pathes to read csv files
 read_filepath= "/Users/zhibekabdyramanova/Documents/GitHub/Python-Challenge/PyPoll/Resources/election_data.csv"
 
 #creating the lists based on the data
