@@ -42,6 +42,7 @@ file.write("-------------------------"+ "\n")
 
 #A complete list of candidates who received votes
 non_repeating_names = list(set(candidate))
+print(non_repeating_names)
 
 #The total number of votes each candidate won
 count_rad = candidate.count('Raymon Anthony Doane')
